@@ -1,0 +1,32 @@
+<% provide(:title, @site.partyname)%>
+<div class="row">
+  <aside class="span4">
+    <section>
+		<h1>
+			<%= @site.partyname%>
+		</h1>
+		<p>
+		
+		Party ID: <%= @site.partynumber%>
+		<p>
+		
+		<p>	<%= @site.address1 %> </p>
+		<p>	<%= @site.address2 %> </p>
+		<p>	<%= @site.address3 %> </p>
+		<p>	<%= @site.postalcode %> <%= @site.city %> </p>
+		
+    </section>
+	
+	
+  </aside>
+  
+  
+  <hlist class="span4">
+  	<section>
+    	<h1>Hardware</h1>
+	
+  	 <%= render @parts %>
+   </section>
+</hlist>
+	 
+</div>
