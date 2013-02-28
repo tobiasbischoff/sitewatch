@@ -20,13 +20,23 @@
 	
   </aside>
   
-  
-  <hlist class="span4">
-  	<section>
-    	<h1>Hardware</h1>
-	
-  	 <%= render @parts %>
-   </section>
+  <hlist class="span12">
+    	<section>
+   <h1>Hardware</h1>
+   <p>
+  <table class="table table-striped">
+    <tr>
+      <th>Serial</th>
+      <th>Description</th>
+    </tr>
+ 
+  <% @parts.each do |part| %>
+    <tr>
+      <td><%= part.serialnumber %></td>
+      <td><%= part.partdescription %></td>
+    </tr>
+  <% end %>
+  </table>
+</section>
 </hlist>
-	 
 </div>

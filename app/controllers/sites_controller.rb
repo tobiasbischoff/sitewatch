@@ -1,10 +1,10 @@
 class SitesController < ApplicationController
   def index
-    @sites = Site.paginate(page: params[:page]).order('partyname ASC')
+    @sites = Site.paginate(page: params[:page]).order('lower(partyname) ASC')
   end
   
   def show
     @site = Site.find(params[:id])
-    @parts = Part.all
+    @parts = Part.where("partynumber = ?", @site.partynumber)
   end
 end
