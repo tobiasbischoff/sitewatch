@@ -32,8 +32,8 @@
  
   <% @parts.each do |part| %>
     <tr>
-      <td><%= part.serialnumber %></td>
-      <td><%= part.partdescription %></td>
+      <td><%= link_to part.serialnumber, part %></td>
+      <td><%= part.family %> <%= part.partdescription %></td>
     </tr>
   <% end %>
   </table>

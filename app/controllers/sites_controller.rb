@@ -1,6 +1,11 @@
 class SitesController < ApplicationController
   def index
-    @sites = Site.paginate(page: params[:page]).order('lower(partyname) ASC')
+    @tmp = Site.search(params[:search])
+    if !@tmp.first
+      redirect_to :controller => 'parts', :action => 'index', :search => params[:search] 
+    else 
+    @sites = Site.paginate(page: params[:page]).order('lower(partyname) ASC').search(params[:search])
+  end
   end
   
   def show

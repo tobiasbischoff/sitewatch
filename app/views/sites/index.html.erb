@@ -1,10 +1,22 @@
 <% provide(:title, 'All users') %>
 <h1>All Sites</h1>
 
+
+<table class="table table-striped">
+  <tr>
+    <th>PartyNr.</th>
+    <th>Name</th>
+	<th>City</th>
+  </tr>
+ 
+<% @sites.each do |site| %>
+  <tr>
+    <td><%= link_to site.partynumber, site %></td>
+    <td><%= site.partyname %></td>
+	<td><%= site.city %></td>
+  </tr>
+<% end %>
+</table>
+
 <%= will_paginate %>
 
-<ul class="sites">
-  <%= render @sites %>
-</ul>
-
-<%= will_paginate %>

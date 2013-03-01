@@ -1,2 +1,21 @@
-<h1>Parts#index</h1>
-<p>Find me in app/views/parts/index.html.erb</p>
+<% provide(:title, 'All SNs') %>
+<h1>All SNs</h1>
+
+
+<table class="table table-striped">
+  <tr>
+    <th>SN.</th>
+    <th>Description</th>
+  </tr>
+ 
+<% @parts.each do |part| %>
+  <tr>
+    <td><%= link_to part.serialnumber, part %></td>
+    <td><%= part.partdescription %></td>
+	
+  </tr>
+<% end %>
+</table>
+
+<%= will_paginate %>
+

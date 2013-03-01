@@ -1,2 +1,72 @@
-<h1>Parts#show</h1>
-<p>Find me in app/views/parts/show.html.erb</p>
+<% provide(:title, @part.serialnumber) %>
+
+
+<p>
+	
+	<div class="container-fluid">
+	  <div class="row-fluid">
+	    <div class="span2">
+			
+		<h3> <%= @part.serialnumber %> </h3>
+		
+    </div>
+	
+      <div class="span8">
+		<p>  
+	<table class="table ">
+
+	  <tr>
+	    <td>Partdescription</td>
+	    <td><%= @part.partdescription %></td>
+	  </tr>
+	  
+	  <tr>
+	    <td>Family</td>
+	    <td><%= @part.family %></td>
+	  </tr>
+	  
+	  <tr>
+	    <td>Instancenumber</td>
+	    <td><%= @part.instancenumber %></td>
+	  </tr>
+	  
+	  <tr>
+	    <td>Itemnumber</td>
+	    <td><%= @part.itemnumber %></td>
+	  </tr>
+
+	  
+	  <tr>
+	    <td>CSI Status</td>
+	    <td><%= @part.csistatus %></td>
+	  </tr>
+	  
+	  <tr>
+	    <td>CSI Installdate</td>
+	    <td><%= @part.installdate %></td>
+	  </tr>
+	  
+	
+	  <tr>
+	    <td>Installed at</td>
+	    <td><%= @site.first.partyname %></td>
+	  </tr>
+	  
+	  <tr>
+	    <td>Party ID</td>
+	    <td><%= @site.first.partynumber %></td>
+	  </tr>
+	  
+	  <tr>
+	    <td>City</td>
+	    <td><%= @site.first.city %></td>
+	  </tr>
+	  
+	  
+	</table>
+	
+
+</div>
+</div>
+</div>
+

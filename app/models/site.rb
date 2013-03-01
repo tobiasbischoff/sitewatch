@@ -18,4 +18,13 @@
 
 class Site < ActiveRecord::Base
   attr_accessible :address1, :address2, :address3, :city, :partyname, :partynumber, :postalcode, :primaryce, :secondaryce
+ 
+  def self.search(search)
+    if search
+      find(:all, :conditions => ['partyname LIKE ?', "%#{search}%"])
+    else
+      find(:all)
+    end
+  end
+  
 end

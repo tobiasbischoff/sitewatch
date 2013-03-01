@@ -19,4 +19,14 @@
 
 class Part < ActiveRecord::Base
   attr_accessible  :csistatus, :family, :installdate, :instancenumber, :itemnumber, :line, :partdescription, :partynumber, :pclass, :serialnumber
+  
+  def self.search(search)
+    if search
+      find(:all, :conditions => ['serialnumber LIKE ?', "%#{search}%"])
+    else
+      find(:all)
+    end
+  end
+
+
 end
