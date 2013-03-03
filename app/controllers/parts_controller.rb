@@ -9,5 +9,9 @@ class PartsController < ApplicationController
     
       @boxnotes = Boxnote.where(:serial => @part.serialnumber)
       
+      if !@boxnotes.first
+        @boxnotes = [ Boxnote.new(:boxnote => "No note yet", :serial => "1234"), Boxnote.new(:boxnote => "No note yet", :serial => "1234")]
+      end
+             
   end
 end
