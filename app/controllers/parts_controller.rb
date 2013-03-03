@@ -7,5 +7,7 @@ class PartsController < ApplicationController
       @part = Part.find(params[:id])
       @site = Site.where("partynumber = ?", @part.partynumber)
     
+      @boxnotes = Boxnote.where(:serial => @part.serialnumber)
+      
   end
 end

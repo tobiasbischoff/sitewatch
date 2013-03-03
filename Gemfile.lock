@@ -71,6 +71,11 @@ GEM
     mime-types (1.21)
     multi_json (1.6.1)
     nokogiri (1.5.6)
+    parse_resource (1.7.3)
+      activemodel
+      activesupport
+      json
+      rest-client
     pg (0.12.2)
     polyglot (0.3.3)
     rack (1.4.5)
@@ -98,6 +103,8 @@ GEM
     rake (10.0.3)
     rdoc (3.12.2)
       json (~> 1.4)
+    rest-client (1.6.7)
+      mime-types (>= 1.16)
     rspec (2.11.0)
       rspec-core (~> 2.11.0)
       rspec-expectations (~> 2.11.0)
@@ -153,6 +160,7 @@ DEPENDENCIES
   capybara (= 1.1.2)
   coffee-rails (~> 3.2.2)
   jquery-rails (= 2.0.2)
+  parse_resource (~> 1.7.2)
   pg (= 0.12.2)
   rails (= 3.2.12)
   rspec-rails (= 2.11.0)
