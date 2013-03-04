@@ -11,5 +11,10 @@ class SitesController < ApplicationController
   def show
     @site = Site.find(params[:id])
     @parts = Part.where("partynumber = ?", @site.partynumber)
+    @contacts = Contact.where("partynumber = ?", @site.partynumber)
+    @primary = @contacts.where("ckind = ?", "Primary Contact of")
+    if !@primary.first
+      @primary = [ Contact.new(:cname => "unknown", :cemail => "unknown",:cphone => " "), Contact.new(:cname => "unknown", :cemail => "unknown",:cphone => " ")]
+    end  
   end
 end

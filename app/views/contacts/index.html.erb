@@ -1,0 +1,26 @@
+<% provide(:title, 'All Contacts') %>
+<h1>All Contacts</h1>
+
+<div class="container">
+<table class="table table-striped">
+  <tr>
+    <th>PartyID</th>
+    <th>Name</th>
+	<th>eMail</th>
+	<th>Phone</th>
+  </tr>
+ 
+<% @contacts.each do |contact| %>
+  <tr>
+    <td><%= contact.partynumber %></td>
+    <td><%= contact.cname %></td>
+	<td><%= mail_to contact.cemail %></td>
+	<td><%= contact.cphone %></td>
+	
+  </tr>
+<% end %>
+</table>
+
+<%= will_paginate %>
+
+</div>

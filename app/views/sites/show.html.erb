@@ -14,7 +14,10 @@
 		<p>	<%= @site.address2 %> </p>
 		<p>	<%= @site.address3 %> </p>
 		<p>	<%= @site.postalcode %> <%= @site.city %> </p>
-		
+		<p>
+		<p>	<%= @primary.first.cname %> </p>
+		<p>	<%= mail_to @primary.first.cemail %> </p>
+		<p>	<%= @primary.first.cphone %> </p>
     </section>
 	
 	
@@ -37,6 +40,31 @@
     </tr>
   <% end %>
   </table>
+  
+  <p>
+	    <h1>Contacts</h1>
+		<p>
+	  <table class="table table-striped">
+	    <tr>
+
+	      <th>Name</th>
+	  	<th>eMail</th>
+	  	<th>Phone</th>
+		<th>Type</th>
+	    </tr>
+ 
+	  <% @contacts.each do |contact| %>
+	    <tr>
+	     
+	      <td><%= contact.cname %></td>
+	  	<td><%= mail_to contact.cemail %></td>
+	  	<td><%= contact.cphone %></td>
+		<td><%= contact.ckind %></td>
+	    </tr>
+	  <% end %>
+	  </table>
+	  
+	 
 </section>
 </hlist>
 </div>

@@ -4,7 +4,7 @@
 require 'csv'
 desc "Imports a CSV file into an ActiveRecord table"
 task :import, [:filename] => :environment do
-CSV.foreach('microcode.csv', :headers => true) do |row|
-Microcode.create!(row.to_hash)
+CSV.foreach('Contacts.csv', :headers => true) do |row|
+Contact.create!(row.to_hash)
 end
 end

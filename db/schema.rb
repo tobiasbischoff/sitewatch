@@ -11,7 +11,18 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130303224123) do
+ActiveRecord::Schema.define(:version => 20130304194157) do
+
+  create_table "contacts", :force => true do |t|
+    t.string   "partynumber"
+    t.string   "cname"
+    t.string   "cemail"
+    t.string   "cphone"
+    t.string   "websupport"
+    t.string   "ckind"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+  end
 
   create_table "microcodes", :force => true do |t|
     t.string   "serial"
