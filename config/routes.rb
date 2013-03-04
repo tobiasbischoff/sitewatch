@@ -1,5 +1,7 @@
 Sitewatch::Application.routes.draw do
 
+  resources :microcode
+
   resources :sites
   resources :parts
 

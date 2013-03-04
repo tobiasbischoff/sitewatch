@@ -12,6 +12,11 @@ class PartsController < ApplicationController
       if !@boxnotes.first
         @boxnotes = [ Boxnote.new(:boxnote => "No note yet", :serial => "1234"), Boxnote.new(:boxnote => "No note yet", :serial => "1234")]
       end
-             
+      
+      @codes = Microcode.where("serial = ?", @part.serialnumber)
+      
+      if !@codes.first
+        @codes = [ Microcode.new(:version => "unknown", :serial => "1234"), Microcode.new(:version => "No note yet", :serial => "1234")]
+      end
   end
 end
